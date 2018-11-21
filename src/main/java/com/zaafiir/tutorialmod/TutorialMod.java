@@ -1,10 +1,12 @@
 package com.zaafiir.tutorialmod;
 
 	
+import com.zaafiir.tutorialmod.init.ModItem;
 import com.zaafiir.tutorialmod.proxy.CommonProxy;
 import com.zaafiir.tutorialmod.utill.Reference;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -37,15 +39,15 @@ public class TutorialMod {
 		
 	}
 	
-	/*
-	public static CreativeTabs tabTutorial = new CreativeTabs("Tab_Tutorial") {
+	
+	public static CreativeTabs tabTutorial = new CreativeTabs("tab_tutorial") {
 		
 		@Override
 		public ItemStack getTabIconItem() {
-			return new ItemStack(ModItems.ObsidianIngot)
+			return new ItemStack(ModItem.OBSIDIAN_INGOT);
 		}
-	}
-	*/
+	};
+	
 	
 
 /*EntityEntry entry = EntityEntryBuilder.create()

@@ -2,4 +2,7 @@
 
 item.obsidian_ingot.name=Obsidian Ingot
 
-//Mods
+//Blocks
+
+//Creative Tabs
+itemGroup.tab_tutorial=Tutorial Mod
