@@ -3,6 +3,8 @@ package com.zaafiir.tutorialmod;
 	
 import com.zaafiir.tutorialmod.proxy.CommonProxy;
 import com.zaafiir.tutorialmod.utill.Reference;
+
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -35,6 +37,15 @@ public class TutorialMod {
 		
 	}
 	
+	/*
+	public static CreativeTabs tabTutorial = new CreativeTabs("Tab_Tutorial") {
+		
+		@Override
+		public ItemStack getTabIconItem() {
+			return new ItemStack(ModItems.ObsidianIngot)
+		}
+	}
+	*/
 	
 
 /*EntityEntry entry = EntityEntryBuilder.create()
