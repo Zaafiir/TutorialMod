@@ -1,6 +1,6 @@
 [
 {
-  "modid": "tutorialmod",
+  "modid": "tm",
   "name": "Tutorial Mod",
   "description": "Tutorial mod for messing around.",
   "version": "1.0",

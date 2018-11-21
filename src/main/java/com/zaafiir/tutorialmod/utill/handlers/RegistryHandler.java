@@ -19,7 +19,7 @@ public class RegistryHandler {
 	
 	@SubscribeEvent
 	public static void onModelRegister(ModelRegistryEvent event) {
-		for(Item item : ModItem.ITEMS) {
+		for(Item item: ModItem.ITEMS) {
 			if(item instanceof IHasModel) {
 				((IHasModel)item).registerModels();
 			}
