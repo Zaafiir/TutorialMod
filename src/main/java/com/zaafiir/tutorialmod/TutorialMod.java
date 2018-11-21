@@ -48,14 +48,5 @@ public class TutorialMod {
 		}
 	};
 	
-	
 
-/*EntityEntry entry = EntityEntryBuilder.create()
-    .entity(MyEntity.class)
-    .id(new ResourceLocation(...), ID++)
-    .name("my_entity")
-    .egg(0xFFFFFF, 0xAAAAAA)
-    .tracker(64, 20, false)
-    .build();
-event.getRegistry().register(entry);*/
 }
