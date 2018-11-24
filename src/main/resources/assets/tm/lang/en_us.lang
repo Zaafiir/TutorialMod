@@ -1,8 +1,13 @@
 //Items
 
 item.obsidian_ingot.name=Obsidian Ingot
+item.pinot_seeds.name=Pinot Seeds
+item.pinot_grape.name=Pinot Grape
 
 //Blocks
+
+//Entities
+entity.tm.ingotzombie.name=Zombie With Obsidian
 
 //Creative Tabs
 itemGroup.tab_tutorial=Tutorial Mod

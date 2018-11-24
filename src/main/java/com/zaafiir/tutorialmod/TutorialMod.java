@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.zaafiir.tutorialmod.api.item.TMItems;
+import com.zaafiir.tutorialmod.init.EntityHandler;
 import com.zaafiir.tutorialmod.init.IHandler;
 import com.zaafiir.tutorialmod.init.InitHandler;
 import com.zaafiir.tutorialmod.init.ItemHandler;
@@ -24,8 +25,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class TutorialMod {
 	
-	@Instance
-	public static TutorialMod instance;
+	@Instance(Reference.MODID)
+	public static TutorialMod instance = new TutorialMod();
 	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
 	public static CommonProxy proxy;
@@ -33,6 +34,7 @@ public class TutorialMod {
 	private static List<IHandler> handlers = new ArrayList<IHandler>() {{
 		add(InitHandler.INSTANCE);
 		add(new ItemHandler());
+		add(new EntityHandler());
 	}};
 	
 	@EventHandler
@@ -42,12 +44,12 @@ public class TutorialMod {
 	
 	@EventHandler
 	public static void Init(FMLInitializationEvent event) {
-		
+		handlers.forEach(handler -> handler.init(event));
 	}
 	
 	@EventHandler
 	public static void PostInit(FMLPostInitializationEvent event) {
-		
+		handlers.forEach(handler -> handler.postInit(event));
 	}
 	
 	

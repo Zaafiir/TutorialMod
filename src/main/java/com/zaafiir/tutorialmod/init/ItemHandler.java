@@ -17,9 +17,13 @@ public class ItemHandler implements IHandler{
 		
 		//Create
 		TMItems.obsidian_ingot = new ItemBase("obsidian_ingot");
+		TMItems.pinot_seeds = new ItemBase("pinot_seeds");
+		TMItems.pinot_grape = new ItemBase("pinot_grape");
 		
 		//Register
 		registerItem(TMItems.obsidian_ingot, "obsidian_ingot");
+		registerItem(TMItems.pinot_seeds, "pinot_seeds");
+		registerItem(TMItems.pinot_grape, "pinot_grape");
 		
 	}
 

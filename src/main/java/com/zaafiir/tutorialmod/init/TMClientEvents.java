@@ -12,7 +12,9 @@ public class TMClientEvents {
 
 	@SubscribeEvent
 	public void onModelRegister(ModelRegistryEvent event) {
-		registerItemRender(TMItems.obsidian_ingot ,0);
+		registerItemRender(TMItems.obsidian_ingot, 0);
+		registerItemRender(TMItems.pinot_seeds, 0);
+		registerItemRender(TMItems.pinot_grape, 0);
 	}
 	
 	protected void registerItemRender(Item item, int meta, String res){

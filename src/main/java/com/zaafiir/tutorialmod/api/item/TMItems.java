@@ -5,4 +5,6 @@ import net.minecraft.item.Item;
 public class TMItems {
 
 	public static Item obsidian_ingot;
+	public static Item pinot_seeds;
+	public static Item pinot_grape;
 }
