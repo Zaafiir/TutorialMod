@@ -1,7 +1,13 @@
 package com.zaafiir.tutorialmod;
 
 	
-import com.zaafiir.tutorialmod.init.ModItem;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.zaafiir.tutorialmod.api.item.TMItems;
+import com.zaafiir.tutorialmod.init.IHandler;
+import com.zaafiir.tutorialmod.init.InitHandler;
+import com.zaafiir.tutorialmod.init.ItemHandler;
 import com.zaafiir.tutorialmod.proxy.CommonProxy;
 import com.zaafiir.tutorialmod.utill.Reference;
 
@@ -24,9 +30,14 @@ public class TutorialMod {
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
 	public static CommonProxy proxy;
 	
+	private static List<IHandler> handlers = new ArrayList<IHandler>() {{
+		add(InitHandler.INSTANCE);
+		add(new ItemHandler());
+	}};
+	
 	@EventHandler
 	public static void PreInit(FMLPreInitializationEvent event) {
-		
+		handlers.forEach(handler -> handler.preInit(event));
 	}
 	
 	@EventHandler
@@ -44,7 +55,7 @@ public class TutorialMod {
 		
 		@Override
 		public ItemStack getTabIconItem() {
-			return new ItemStack(ModItem.OBSIDIAN_INGOT);
+			return new ItemStack(TMItems.obsidian_ingot);
 		}
 	};
 	
