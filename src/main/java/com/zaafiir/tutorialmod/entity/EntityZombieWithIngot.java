@@ -6,6 +6,7 @@ import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -26,15 +27,28 @@ public class EntityZombieWithIngot extends EntityZombie {
 		Object data = super.onInitialSpawn(difficulty, par1EntityLivingData);
 		
 		if (getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).isEmpty()) {
-			setHeldItem(EnumHand.MAIN_HAND, new ItemStack(TMItems.obsidian_ingot));
+			int i = this.rand.nextInt(3);
+			switch (i) {
+			
+			case 0: setHeldItem(EnumHand.OFF_HAND, new ItemStack(TMItems.obsidian_ingot));
+					break;
+			case 1: setHeldItem(EnumHand.OFF_HAND, new ItemStack(Items.GOLD_INGOT));
+					break;
+			case 2: setHeldItem(EnumHand.OFF_HAND, new ItemStack(Items.IRON_INGOT));
+					break;
+			}
 		}
 		
 		return (IEntityLivingData)data;
 	}
 	
+
 	public void onDeath(DamageSource cause) {
 		super.onDeath(cause);
-		EntityItem entityitem = this.entityDropItem(new ItemStack(TMItems.obsidian_ingot), 1.0F);
+		if(!this.world.isRemote) {
+			EntityItem entityitem = this.entityDropItem((getHeldItem(EnumHand.OFF_HAND)), 1.0F);
+		}
+		
 	}
 
 }
