@@ -15,6 +15,7 @@ public class TMClientEvents {
 		registerItemRender(TMItems.obsidian_ingot, 0);
 		registerItemRender(TMItems.pinot_seeds, 0);
 		registerItemRender(TMItems.pinot_grape, 0);
+		registerItemRender(TMItems.fire_ball_spell, 0);
 	}
 	
 	protected void registerItemRender(Item item, int meta, String res){
